@@ -6,19 +6,18 @@
 package client;
 
 import java.beans.PropertyChangeEvent;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 import javax.swing.JTabbedPane;
 import javax.swing.SwingUtilities;
-import voter.Voter;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import javax.swing.text.Document;
 import javax.swing.text.JTextComponent;
+import voter.Voter;
 
 /**
  *

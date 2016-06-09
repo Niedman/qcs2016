@@ -68,8 +68,7 @@ public class InsulinDoseCalculatorService
      *     returns InsulinDoseCalculator
      */
     @WebEndpoint(name = "InsulinDoseCalculatorPort")
-    public InsulinDoseCalculator getInsulinDoseCalculatorPort() throws java.lang.NoSuchMethodError
-    {
+    public InsulinDoseCalculator getInsulinDoseCalculatorPort() {
         return super.getPort(new QName("http://server/", "InsulinDoseCalculatorPort"), InsulinDoseCalculator.class);
     }
 
