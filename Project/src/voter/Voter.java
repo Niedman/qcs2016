@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package voter;
-    
+
 
 import java.util.*;
 import java.util.Map.Entry;
@@ -19,15 +19,16 @@ public class Voter {
 
     static ConcurrentHashMap<String, Boolean> webServices = new ConcurrentHashMap<String, Boolean>();
 
-    static String[] urls = {"http://qcs08.dei.uc.pt:8081/calculator?wsdl","http://qcsa1-beardsdei.rhcloud.com/qcsa1/InsulinDoseCalculator?wsdl",
-        "http://qcs05.dei.uc.pt:8080/InsulinDoseCalculator?wsdl", "http://qcsproject1-qcsproject.rhcloud.com/InsulinDoseCalculator?wsdl",
+   /* static String[] urls = {"http://qcsa1-beardsdei.rhcloud.com/qcsa1/InsulinDoseCalculator?wsdl",
+        "http://qcs05.dei.uc.pt:8080/InsulinDoseCalculator?wsdl",
         "http://insulincalculator-aybareon.rhcloud.com/InsulinCalculatorTomcat/InsulinCalculator?wsdl",
         "http://webservice-sqdcourse.rhcloud.com/InsulinDoseCalculator?wsdl",
-        "http://qcs07.dei.uc.pt:8080/InsulinCalculator?wsdl","http://qcsassignment1-salvadorapps.rhcloud.com/InsulinDoseCalculatorWebService?wsdl","http://qcs01.dei.uc.pt:9000/InsulinDoseCalculator?wsdl"};
-    
-    //static String[] urls = {"http://qcs05.dei.uc.pt:8080/InsulinDoseCalculator?wsdl","http://qcs08.dei.uc.pt:8081/calculator?wsdl","http://webservice-sqdcourse.rhcloud.com/InsulinDoseCalculator?wsdl","http://insulincalculator-aybareon.rhcloud.com/InsulinCalculatorTomcat/InsulinCalculator?wsdl","http://qcsa1-beardsdei.rhcloud.com/qcsa1/InsulinDoseCalculator?wsdl"};
+        "http://qcs07.dei.uc.pt:8080/InsulinCalculator?wsdl",
+        "http://sgd46.dei.uc.pt:8088/InsulinDoseCalculator?wsdl"};
+    */
+    static String[] urls = {"http://qcs05.dei.uc.pt:8080/InsulinDoseCalculator?wsdl","http://qcs08.dei.uc.pt:8081/calculator?wsdl","http://webservice-sqdcourse.rhcloud.com/InsulinDoseCalculator?wsdl","http://insulincalculator-aybareon.rhcloud.com/InsulinCalculatorTomcat/InsulinCalculator?wsdl","http://qcsa1-beardsdei.rhcloud.com/qcsa1/InsulinDoseCalculator?wsdl"};
 
-    public static String ourService = "http://qcs08.dei.uc.pt:8081/calculator?wsdl";
+    public static String ourService = "http://qcs05.dei.uc.pt:8080/InsulinDoseCalculator?wsdl";
     int mealtimeInsulinDose;
     int backgroundInsulinDose;
     int personalSensitivityToInsulin;
@@ -212,7 +213,6 @@ public class Voter {
         
         int temp =0;
         for (Entry<Integer, Integer> entry : map.entrySet()){
-            
             for (int j=0;j<result.length;j++){
                 if (valueIsEqual(entry.getKey(), result[j])){
                     temp = entry.getValue();
@@ -220,7 +220,6 @@ public class Voter {
                 }
                     
             }
-            System.out.println("Chave:"+entry.getKey() + "Valor:"+entry.getValue());
         }
         int conta = 0;
         int maxValueAux =0;
@@ -233,7 +232,6 @@ public class Voter {
             }
         }
         if (conta >1){
-            
             return -1;
         }
 
